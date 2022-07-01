@@ -17,8 +17,11 @@ typedef struct format
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+
 void *print_char(va_list, int *);
 void *print_string(va_list, int *);
 void *print_percent(va_list, int *);
+int _strlen(char *s);
+
 
 #endif
