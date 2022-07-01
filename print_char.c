@@ -1,10 +1,16 @@
 #include "main.h"
 
-void *print_char(va_list ap, char *format, int *count)
+/**
+ * print_char - fixes output for char printing
+ * @ap: argument pointer
+ * @output: print ready output
+ * @count: position in string
+ * Return: single char
+ */
+
+void *print_char(va_list ap, char *output, int *count)
 {
-	int i;
-
-
-	format[i] = va_arg;
-	return(format);
+	output[count] = va_arg(ap, int);
+	(*count)++;
+	return (output);
 }
