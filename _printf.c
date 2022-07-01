@@ -1,29 +1,62 @@
 #include "main.h"
 
 /**
+ * free_output - free allocated memory if malloc fails
+ * @in: memory to free
+ */
+
+void free_output(char *in)
+{
+	free(in);
+	exit(-1);
+}
+
+/**
  * _printf - Prints a string with formatted data
- * @format - String containing data variables
+ * @format; String containing data variables
  * Return: Number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
-	/* Declare variables and struct */
-
-	/* Allocate 1024 bytes for output string */
-
-	/* va_start */
-
-	/* Iterate through format string */
-
-	/* Check for % symbol */
-
-	/*
-	 * If format[i] == '%', check next character
-	 * and send to corresponding function.
-	 */
-
+	int count = 0, i, j;
+	char *output;
+	va_list ap;
+	d_type data_type[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{'\0', NULL}
+	};
+	output = malloc(1024 * sizeof(char));
+	if (output == NULL)
+		free_output(output);
+	va_start(ap, d_type);
+	for (i = 0; format != NULL && format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			for (j = 0; data_type[j].formID; j++)
+			{
+				if (format[i] == data_type[j].formID)
+					output = data_type[j].function(ap, output, &count);
+			}
+			if (data_type[j].formID == '\0')
+			{
+				output[count] = '%';
+				output++;
+				output[count] = format[i];
+				output++;
+			}
+		}
+		else
+		{
+			output[i] = format[i];
+			count++;
+		}
+	}
 	write(1, &output, count);
+	free(output);
 	return (count);
-
 }
