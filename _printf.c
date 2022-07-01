@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * free_output - free allocated memory if malloc fails
@@ -13,7 +14,7 @@ void free_output(char *in)
 
 /**
  * _printf - Prints a string with formatted data
- * @format; String containing data variables
+ * @format: String containing data variables
  * Return: Number of characters printed
  */
 
@@ -25,38 +26,33 @@ int _printf(const char *format, ...)
 	d_type data_type[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"%", print_percent},
 		{'\0', NULL}
 	};
 	output = malloc(1024 * sizeof(char));
 	if (output == NULL)
 		free_output(output);
-	va_start(ap, d_type);
-	for (i = 0; format != NULL && format[i] != '\0'; i++)
+	va_start(ap, format);
+	for (i = 0; format != NULL && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
+printf("i = %i, count = %i\n", i, count);
 			for (j = 0; data_type[j].formID; j++)
 			{
-				if (format[i] == data_type[j].formID)
+				if (format[i] == *(data_type[j]).formID)
 					output = data_type[j].function(ap, output, &count);
-			}
-			if (data_type[j].formID == '\0')
-			{
-				output[count] = '%';
-				output++;
-				output[count] = format[i];
-				output++;
+printf("i = %i, j = %i, count = %i\n", i, j, count);
 			}
 		}
 		else
 		{
-			output[i] = format[i];
+			output[count] = format[i];
 			count++;
 		}
 	}
-	write(1, &output, count);
+	va_end(ap);
+	write(1, output, count);
 	free(output);
 	return (count);
 }
