@@ -5,10 +5,10 @@
 #include <stdlib.h>
 
 /**
- * struct format - struct format
+ * struct d_type - struct d_type
  *
- * @format: data format
- * @func: associated function
+ * @formID: data format
+ * @function: associated function
  */
 typedef struct d_type
 {
