@@ -26,6 +26,9 @@ int _printf(const char *format, ...)
 	d_type data_type[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"%", print_percent},
+		{"i", print_integer},
+		{"d", print_integer},
 		{'\0', NULL}
 	};
 	output = malloc(1024 * sizeof(char));
