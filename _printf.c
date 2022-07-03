@@ -37,12 +37,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-printf("i = %i, count = %i\n", i, count);
 			for (j = 0; data_type[j].formID; j++)
 			{
 				if (format[i] == *(data_type[j]).formID)
 					output = data_type[j].function(ap, output, &count);
-printf("i = %i, j = %i, count = %i\n", i, j, count);
 			}
 		}
 		else
