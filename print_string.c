@@ -15,7 +15,7 @@ void *print_string(va_list ap, char *output, int *count)
 
 	for (i = 0; str[i]; i++)
 	{
-		output[count] = str[i];
+		output[*count] = str[i];
 		(*count)++;
 	}
 
