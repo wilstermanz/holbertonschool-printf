@@ -11,7 +11,7 @@
 void *print_integer(va_list ap, char *output, int *count)
 {
 	int len = 1, i = 1;
-	int num = va_arg(ap, int);
+	long int num = va_arg(ap, int);
 	char *temp;
 
 	if (num < 0)
@@ -20,30 +20,27 @@ void *print_integer(va_list ap, char *output, int *count)
 		output[*count] = '-';
 		(*count)++;
 	}
-
 	while (num / i >= 10)
 	{
 		i *= 10;
 		len++;
 	}
-
 	temp = malloc(sizeof(char) * len);
 	if (temp == NULL)
 	{
 		free(temp);
 		exit(-1);
 	}
-
 	for (i = 0; i < len; i++)
 	{
 		temp[i] = (num % 10) + '0';
 		num /= 10;
 	}
-
 	for (i -= 1; i >= 0; i--)
 	{
 		output[*count] = temp[i];
 		(*count)++;
 	}
+	free(temp);
 	return (output);
 }
