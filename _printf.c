@@ -82,8 +82,11 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	output = malloc(1024 * sizeof(char));
-	if (output == NULL)
+	if (output == NULL || format == NULL)
+	{
 		free_output(output);
+		return (-1);
+	}
 
 	va_start(ap, format);
 
