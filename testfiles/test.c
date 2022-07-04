@@ -42,10 +42,10 @@ int main(void)
     printf("Unknown:[%r]\n");
     _printf("NULL String:[%s]\n", NULL);
     printf("NULL String:[%s]\n", NULL);
-    _printf("Max int = %d, Min int = %d\n", INT_MAX, INT_MIN);
-    printf("Max int = %d, Min int = %d\n", INT_MAX, INT_MIN);
-    _printf("No arguments for %d\n");
-    printf("No arguments for %d\n");
+    _printf("Max int = [%d], Min int = [%d]\n", INT_MAX, INT_MIN);
+    printf("Max int = [%d], Min int = [%d]\n", INT_MAX, INT_MIN);
+    _printf("No arguments for [%d]\n");
+    printf("No arguments for [%d]\n");
     _printf("Arguments but nowhere to put them\n", 12, "hello");
     printf("Arguments but nowhere to put them\n", 12, "hello");
     _printf(NULL);

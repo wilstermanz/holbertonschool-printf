@@ -81,18 +81,24 @@ int _printf(const char *format, ...)
 	char *output;
 	va_list ap;
 
+	if (format == NULL)
+		return (0);
+
 	output = malloc(1024 * sizeof(char));
-	if (output == NULL || format == NULL)
-	{
+	if (output == NULL)
 		free_output(output);
-		return (-1);
-	}
 
 	va_start(ap, format);
 
 	output = str_checker(ap, format, output, &count);
 
 	va_end(ap);
+
+	if (output == NULL)
+	{
+		free(output);
+		return (0);
+	}
 
 	write(1, output, count);
 	free(output);
