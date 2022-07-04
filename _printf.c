@@ -70,24 +70,17 @@ int _printf(const char *format, ...)
 	char *output;
 	va_list ap;
 
-	output = malloc(1024 * sizeof(char));
+	if (format)
+		output = malloc(1024);
+
 	if (!output || !format)
-	{
-		free(output);
 		return (-1);
-	}
 
 	va_start(ap, format);
 
 	output = str_checker(ap, format, output, &count);
 
 	va_end(ap);
-
-	if (output == NULL)
-	{
-		free(output);
-		return (-1);
-	}
 
 	write(1, output, count);
 	free(output);
