@@ -1,9 +1,11 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 /**
  * struct d_type - struct d_type
@@ -24,4 +26,4 @@ void *print_string(va_list, char *, int *);
 void *print_percent(va_list, char *, int *);
 void *print_integer(va_list, char *, int *);
 
-#endif
+#endif /* MAIN_H */

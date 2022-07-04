@@ -74,7 +74,7 @@ int _printf(const char *format, ...)
 	if (!output || !format)
 	{
 		free(output);
-		return (count);
+		return (-1);
 	}
 
 	va_start(ap, format);
@@ -86,7 +86,7 @@ int _printf(const char *format, ...)
 	if (output == NULL)
 	{
 		free(output);
-		return (count);
+		return (-1);
 	}
 
 	write(1, output, count);

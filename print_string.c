@@ -15,14 +15,7 @@ void *print_string(va_list ap, char *output, int *count)
 	char *error = "(null)";
 
 	if (str == NULL)
-	{
-		for (i = 0; error[i]; i++)
-		{
-			output[*count] = error[i];
-			(*count)++;
-		}
-		return (output);
-	}
+		str = "(null)"
 
 	for (i = 0; str[i]; i++)
 	{
