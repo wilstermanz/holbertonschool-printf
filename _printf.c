@@ -2,17 +2,6 @@
 #include <stdio.h>
 
 /**
- * free_output - free allocated memory if malloc fails
- * @in: memory to free
- */
-
-void free_output(char *in)
-{
-	free(in);
-	exit(-1);
-}
-
-/**
  * str_checker - checks format string and calls applicable functions
  * @ap: argument pointer
  * @format: pointer to format string to be searched
@@ -81,12 +70,12 @@ int _printf(const char *format, ...)
 	char *output;
 	va_list ap;
 
-	if (format == NULL)
-		return (0);
-
 	output = malloc(1024 * sizeof(char));
-	if (output == NULL)
-		free_output(output);
+	if (!output || !format)
+	{
+		free(output);
+		return (count);
+	}
 
 	va_start(ap, format);
 
@@ -97,7 +86,7 @@ int _printf(const char *format, ...)
 	if (output == NULL)
 	{
 		free(output);
-		return (0);
+		return (count);
 	}
 
 	write(1, output, count);
