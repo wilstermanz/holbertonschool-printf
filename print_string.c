@@ -12,10 +12,9 @@ void *print_string(va_list ap, char *output, int *count)
 {
 	char *str = va_arg(ap, char *);
 	int i;
-	char *error = "(null)";
 
 	if (str == NULL)
-		str = "(null)"
+		str = "(null)";
 
 	for (i = 0; str[i]; i++)
 	{
