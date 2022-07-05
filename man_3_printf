@@ -10,14 +10,16 @@ _printf takes the arguments it is given and prints them to standard output, much
 .sp
 
 .B %i, %d
-- print an int
+- print integer
 .sp
 .B %c
-- print a character
+- print character
 .sp
 .B %s
-- print a string
-
+- print string
+.sp
+.B %b
+- print binary
 .sp
 .B %%
 - print a single %
