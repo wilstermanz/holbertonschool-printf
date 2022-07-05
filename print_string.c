@@ -8,7 +8,7 @@
  * Return: print ready string
  */
 
-void *print_string(va_list ap, char *output, int *count)
+void print_string(va_list ap, char *output, int *count)
 {
 	char *str = va_arg(ap, char *);
 	int i;
@@ -21,6 +21,4 @@ void *print_string(va_list ap, char *output, int *count)
 		output[*count] = str[i];
 		(*count)++;
 	}
-
-	return (output);
 }
