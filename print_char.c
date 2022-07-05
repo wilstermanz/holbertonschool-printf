@@ -10,6 +10,11 @@
 
 void print_char(va_list ap, char *output, int *count)
 {
-	output[*count] = va_arg(ap, int);
+	char c = va_arg(ap, int);
+
+	if (!c || !*output)
+		return;
+
+	output[*count] = c;
 	(*count)++;
 }
