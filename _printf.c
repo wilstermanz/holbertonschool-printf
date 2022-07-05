@@ -19,11 +19,9 @@ void *str_checker(
 {
 	int i, j, success;
 	d_type data_type[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"i", print_integer},
-		{"d", print_integer},
+		{"c", print_char}, {"s", print_string},
+		{"%", print_percent}, {"i", print_integer},
+		{"d", print_integer}, {"b", print_binary},
 		{'\0', NULL}
 	};
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
