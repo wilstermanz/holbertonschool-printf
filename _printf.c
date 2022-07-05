@@ -70,11 +70,15 @@ int _printf(const char *format, ...)
 	char *output;
 	va_list ap;
 
-	if (format)
-		output = malloc(1024);
-
-	if (!output || !format)
+	if (format == NULL)
 		return (-1);
+
+	output = malloc(1024 * sizeof(char));
+	if (output == NULL)
+	{
+		free(output);
+		return (-1);
+	}
 
 	va_start(ap, format);
 
