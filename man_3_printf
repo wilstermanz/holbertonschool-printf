@@ -1,0 +1,29 @@
+.TH _printf 3 "17 March 2019" "HOLBERTON SCHOOL" "_PRINTF"
+.SH NAME
+.B _printf
+- formatted output converter
+.SH DESCRIPTION
+_printf takes the arguments it is given and prints them to standard output, much in the same way that printf() does in the standard library. It is a variadic function and can receive multiple arguments within the same call.
+.sp
+
+.B Conversion specifiers
+.sp
+
+.B %i, %d
+- print an int
+.sp
+.B %c
+- print a character
+.sp
+.B %s
+- print a string
+
+.sp
+.B %%
+- print a single %
+.sp
+.SH NOTES
+This _printf() function sets aside a malloc() buffer of 1024 bytes and adds each argument to that buffer until it finally prints them all at once, returning the length of that final outputted string.
+.sp
+.SH AUTHORS
+Zach Wilsterman & Buzz Kleine
