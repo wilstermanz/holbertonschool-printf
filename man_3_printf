@@ -1,4 +1,4 @@
-.TH _printf 3 "17 March 2019" "HOLBERTON SCHOOL" "_PRINTF"
+.TH _printf 3 "July 5, 2022" "HOLBERTON SCHOOL" "_PRINTF"
 .SH NAME
 .B _printf()
 - formatted output converter
