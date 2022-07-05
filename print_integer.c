@@ -8,7 +8,7 @@
  * Return: pointer to output
  */
 
-void *print_integer(va_list ap, char *output, int *count)
+void print_integer(va_list ap, char *output, int *count)
 {
 	int len = 1, i = 1;
 	long int num = va_arg(ap, int);
@@ -42,5 +42,4 @@ void *print_integer(va_list ap, char *output, int *count)
 		(*count)++;
 	}
 	free(temp);
-	return (output);
 }

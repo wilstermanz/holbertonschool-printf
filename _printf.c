@@ -36,7 +36,7 @@ void *str_checker(
 				success = 0;
 				if (format[i] == *(data_type[j]).formID)
 				{
-					output = data_type[j].function(ap, output, count);
+					data_type[j].function(ap, output, count);
 					success = 1;
 					break;
 				}
@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 
-	output = str_checker(ap, format, output, &count);
+	str_checker(ap, format, output, &count);
 
 	va_end(ap);
 

@@ -8,7 +8,7 @@
  * Return: pointer to output
  */
 
-void *print_percent(
+void print_percent(
 		__attribute__((unused)) va_list ap,
 		char *output,
 		int *count
@@ -16,5 +16,4 @@ void *print_percent(
 {
 	output[*count] = '%';
 	(*count)++;
-	return (output);
 }
