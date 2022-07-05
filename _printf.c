@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 	char *output;
 	va_list ap;
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	output = malloc(1024 * sizeof(char));
