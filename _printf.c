@@ -19,11 +19,9 @@ void *str_checker(
 {
 	int i, j, success;
 	d_type data_type[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"i", print_integer},
-		{"d", print_integer},
+		{"c", print_char}, {"s", print_string},
+		{"%", print_percent}, {"i", print_integer},
+		{"d", print_integer}, {"b", print_binary},
 		{'\0', NULL}
 	};
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
@@ -70,7 +68,7 @@ int _printf(const char *format, ...)
 	char *output;
 	va_list ap;
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	output = malloc(1024 * sizeof(char));
