@@ -1,9 +1,9 @@
 .TH _printf 3 "17 March 2019" "HOLBERTON SCHOOL" "_PRINTF"
 .SH NAME
-.B _printf
+.B _printf()
 - formatted output converter
 .SH DESCRIPTION
-_printf takes the arguments it is given and prints them to standard output, much in the same way that printf() does in the standard library. It is a variadic function and can receive multiple arguments within the same call.
+_printf() takes the arguments it is given and prints them to standard output, much in the same way that printf() does in the standard library. It is a variadic function and can receive multiple arguments within the same call.
 .sp
 
 .B Conversion specifiers
