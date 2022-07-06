@@ -71,7 +71,7 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	output = malloc(1024 * sizeof(char));
+	output = malloc(1024 * sizeof(int));
 	if (output == NULL)
 	{
 		free(output);

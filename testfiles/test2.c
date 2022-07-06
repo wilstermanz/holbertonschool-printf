@@ -66,5 +66,7 @@ int main(void)
     printf("Zero length string: %s\n", "");
     _printf("");
     printf("");
+    _printf("%%c%%%y%%%v%%n%%b\n");
+    printf("%%c%%%y%%%v%%n%%b\n");
     return (0);
 }
