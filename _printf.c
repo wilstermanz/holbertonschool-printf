@@ -25,7 +25,7 @@ void str_checker(
 		{"r", print_reverse},	{"R", print_ROT13},
 		{"u", print_unsigned},	{"o", print_octal},
 		{"x", print_hex},	{"X", print_HEX},
-		{NULL, NULL}
+		{"S", print_STRING},	{NULL, NULL}
 	};
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
