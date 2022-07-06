@@ -14,6 +14,13 @@ void print_binary(va_list ap, char *output, int *count)
 	int i, binary[32];
 	unsigned int num = va_arg(ap, int);
 
+	if (num == 0)
+	{
+		output[*count] = '0';
+		(*count)++;
+		return;
+	}
+
 	for (i = 0; num > 0; i++)
 	{
 		binary[i] = num % 2;
