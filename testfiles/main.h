@@ -28,5 +28,9 @@ void print_integer(va_list, char *, int *);
 void print_binary(va_list, char *, int *);
 void print_reverse(va_list, char *, int *);
 void print_ROT13(va_list, char *, int *);
+void print_unsigned(va_list, char *, int *);
+void print_octal(va_list, char *, int *);
+void print_hex(va_list, char *, int *);
+void print_HEX(va_list, char *, int *);
 
 #endif /* MAIN_H */

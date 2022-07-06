@@ -19,10 +19,12 @@ void str_checker(
 {
 	int i, j, success;
 	d_type data_type[] = {
-		{"c", print_char}, {"s", print_string},
-		{"%", print_percent}, {"i", print_integer},
-		{"d", print_integer}, {"b", print_binary},
-		{"r", print_reverse}, {"R", print_ROT13},
+		{"c", print_char},	{"s", print_string},
+		{"%", print_percent},	{"i", print_integer},
+		{"d", print_integer},	{"b", print_binary},
+		{"r", print_reverse},	{"R", print_ROT13},
+		{"u", print_unsigned},	{"o", print_octal},
+		{"x", print_hex},	{"X", print_HEX},
 		{NULL, NULL}
 	};
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
