@@ -10,7 +10,7 @@
  * Return: pointer to output
  */
 
-void *str_checker(
+void str_checker(
 		va_list ap,
 		const char *format,
 		char *output,
@@ -22,6 +22,7 @@ void *str_checker(
 		{"c", print_char}, {"s", print_string},
 		{"%", print_percent}, {"i", print_integer},
 		{"d", print_integer}, {"b", print_binary},
+		{"r", print_reverse}, {"R", print_ROT13},
 		{NULL, NULL}
 	};
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
@@ -53,7 +54,6 @@ void *str_checker(
 			(*count)++;
 		}
 	}
-	return (output);
 }
 
 /**

@@ -26,5 +26,7 @@ void print_string(va_list, char *, int *);
 void print_percent(va_list, char *, int *);
 void print_integer(va_list, char *, int *);
 void print_binary(va_list, char *, int *);
+void print_reverse(va_list, char *, int *);
+void print_ROT13(va_list, char *, int *);
 
 #endif /* MAIN_H */

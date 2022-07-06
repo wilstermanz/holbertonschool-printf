@@ -15,7 +15,7 @@ int main(void)
     void *addr;
 
 
-    _printf("binary int [%b]\n", -1);
+    _printf("binary int [%b]\n", 0);
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
@@ -32,7 +32,7 @@ int main(void)
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
+    _printf("String:[%R]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
     _printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
@@ -40,8 +40,8 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+    _printf("Unknown:[%q]\n");
+    printf("Unknown:[%q]\n");
     _printf("NULL String:[%s]\n", NULL);
     printf("NULL String:[%s]\n", NULL);
     _printf("Max int = [%d], Min int = [%d]\n", INT_MAX, INT_MIN);
