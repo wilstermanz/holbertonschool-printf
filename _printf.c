@@ -22,7 +22,7 @@ void *str_checker(
 		{"c", print_char}, {"s", print_string},
 		{"%", print_percent}, {"i", print_integer},
 		{"d", print_integer}, {"b", print_binary},
-		{'\0', NULL}
+		{NULL, NULL}
 	};
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{

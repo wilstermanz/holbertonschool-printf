@@ -54,5 +54,10 @@ int main(void)
     printf(NULL);
     _printf("NULL Character:[%c]\n", '\0');
     printf("NULL Character:[%c]\n", '\0');
+    len = _printf("%");
+	len2 = printf("%");
+	printf("\n");
+	printf("%d\n", len);
+	printf("%d\n", len2);
     return (0);
 }

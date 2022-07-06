@@ -10,12 +10,9 @@
 
 void print_char(va_list ap, char *output, int *count)
 {
-	if (!ap || !output)
-	{
-		(*count)++;
+	if (ap == NULL || output == NULL)
 		return;
-	}
 
-	output[*count] = va_arg(ap, int);
+	output[*count] = (char)va_arg(ap, int);
 	(*count)++;
 }
