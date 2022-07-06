@@ -6,11 +6,10 @@
 .B #include <stdio.h>
 
 .B #include <stdarg.h>
-
-
+.sp
 .B int _printf(const char *
-.UL format
-, ...);
+.UL format,
+.B ...);
 .SH DESCRIPTION
 _printf() takes the arguments it is given and prints them to standard output, much in the same way that printf() does in the standard library. It is a variadic function and can receive multiple arguments within the same call.
 .sp
